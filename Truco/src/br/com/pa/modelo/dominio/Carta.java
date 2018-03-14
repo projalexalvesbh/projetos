@@ -1,26 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.pa.modelo.dominio;
 
-/**
- *
- * @author 41512086
- */
+import br.com.pa.enums.Nipes;
+
 public class Carta {
-   
+	
     int valor;
     String nipe;
  
-    
     public int getPeso(){
         
-        if ((valor == 4 && !nipe.equalsIgnoreCase("P")) || 
+        if ((valor == 4 && !nipe.equalsIgnoreCase(Nipes.PAUS.getSigla())) || 
                 valor == 5 || 
                 valor == 6 || 
-                (valor == 7 && (!nipe.equalsIgnoreCase("O") && nipe.equalsIgnoreCase("C"))) ||
+                (valor == 7 && (!nipe.equalsIgnoreCase(Nipes.OUROS.getSigla()) && nipe.equalsIgnoreCase(Nipes.COPAS.getSigla()))) ||
                 (valor >= 8 && valor <= 10)){
             return valor - 3;
         }
@@ -30,7 +22,7 @@ public class Carta {
         }
         
         if (valor == 1){
-            if(!nipe.equalsIgnoreCase("E")){
+            if(!nipe.equalsIgnoreCase(Nipes.ESPADA.getSigla())){
                 return 8;
             }else{
                 return 12;
@@ -41,7 +33,7 @@ public class Carta {
             return 14;
         }
         if(valor == 7){
-            if(!nipe.equalsIgnoreCase("O")){
+            if(!nipe.equalsIgnoreCase(Nipes.OUROS.getSigla())){
                 return 11;
             }else{
                 return 13;
