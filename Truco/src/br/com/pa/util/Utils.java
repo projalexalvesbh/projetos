@@ -8,7 +8,7 @@ import br.com.pa.modelo.dominio.Carta;
 
 public class Utils {
 	
-	public Carta[] sortearCartas(Carta[] baralho, int quantidade) {
+	public static Carta[] sortearCartas(Carta[] baralho, int quantidade) {
 		
 		Map<Integer, Integer> sorteados = new HashMap<>();
 		
@@ -20,7 +20,7 @@ public class Utils {
 		
 		int posicaoCarta;
 		
-		while (i <= quantidade) {
+		while (i < quantidade) {
 			
 			posicaoCarta = r.nextInt(baralho.length);
 			
